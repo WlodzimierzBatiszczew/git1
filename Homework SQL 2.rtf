@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 use hr;\
+\
+SELECT\
+department_id,\
+MAX(\
+CASE\
+    WHEN salary > 10000 \
+  THEN 1 \
+    ELSE 0 \
+END\
+) AS has_high_earners\
+FROM employees\
+GROUP BY department_id\
+\
+SELECT\
+department_id,\
+MIN(\
+CASE\
+    WHEN salary > 10000 \
+  THEN 1 \
+    ELSE 0 \
+END\
+) AS has_high_earners\
+FROM employees\
+GROUP BY department_id\
+\
+select * from employees;\
+\
+SELECT \
+	last_name\
+FROM employees\
+ORDER BY last_name;\
+\
+\
+\
+ SELECT \
+	first_name\
+    ,last_name\
+    ,salary\
+    \
+FROM employees\
+ORDER BY salary DESC;\
+\
+select \
+    last_name,\
+    first_name\
+from employees  \
+where department_id = 60 or department_id = 90 or department_id = 110\
+	order by last_name;\
+\
+select \
+    last_name,\
+    first_name,\
+    salary\
+from employees  \
+where job_id like 'ST_CLERK'\
+	order by salary DESC;\
+    \
+    select \
+    last_name,\
+    first_name,\
+    salary\
+from employees  \
+where last_name like 'D%'\
+	order by last_name;}
